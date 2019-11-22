@@ -17,13 +17,13 @@ $(document).ready(function(){
 
 
     function getAnswer(answer) {
-      let randomDoctor = (`${answer.data}`);
+      let randomDoctor = (`${answer.data[1].profile.first_name}`);
       console.log(randomDoctor);
     }
 
   });
 
-  player.setPopUp();
+  // player.setPopUp();
 
   $("button.restart").click(function(){
     location.reload();
