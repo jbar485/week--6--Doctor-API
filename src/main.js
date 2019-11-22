@@ -18,6 +18,7 @@ $(document).ready(function(){
 
     function getAnswer(answer) {
       let randomDoctor = (`${answer.data[1].profile.first_name}`);
+      $('.doctor').text(`Doctor: ${answer.data[1].profile.first_name} ${answer.data[1].profile.last_name}`);
       console.log(randomDoctor);
     }
 
