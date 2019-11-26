@@ -23,9 +23,9 @@ _This website uses Better Doctor API which allows a user to either enter the sym
 * _Click the clone or download button and copy the link_
 * _open your terminal and type "git clone (link)"_
 * _If needed download Node.js from the official Node.js web site: (https://nodejs.org)_
-*_go to (https://developer.betterdoctor.com/) to create an account and get an API key_
-*_create a .env folder in your project_
-*_in the .env write API_KEY = YOUR API KEY GOES HERE
+* _go to (https://developer.betterdoctor.com/) to create an account and get an API key_
+* _create a .env folder in your project_
+* _in the .env write API_KEY = YOUR API KEY GOES HERE
 OTHER_API_KEY = OTHER UNIQUE API KEY GOES HERE_
 * _run: npm install in the terminal_
 * _run: npm run build. this will create distribution folder. It also creates the index.html file within the distribution folder. When making edits to the code, edit the index.html, and all other files within the SRC folder_
