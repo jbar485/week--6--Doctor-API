@@ -7,25 +7,46 @@
 </head>
 <body>
   <div class="container">
-    <h1>Find nearby Doctors</h1>
-    <form>
-      <div class="form-group">
-        <label for="symptoms">Symptoms</label>
-        <input type="text" class="form-control" id="symptoms" placeholder="Ex. sore throat, foot">
-      </div>
-      <div class="form-group">
-        <label for="doctorName">Specific Doctor</label>
-        <input type="text" class="form-control" id="doctorName" placeholder="Ex. Mark">
-      </div>
-      <button type="button" class="btn btn-primary" id="answerButton">Submit</button>
-    </form>
-    <h2 id="doctor"></h2>
-    <h3 id="yourSymptoms"></h3>
-    <h3 id="doctorAddress"></h3>
-    <h3 id="doctornumber"></h3>
-    <h3 id="doctorWebsite"></h3>
-    <h3 id="doctorAccept"></h3>
+    <div class="firstPage">
+      <h1>What would you like to do</h1>
+      <button type="button" class="btn btn-primary" id="specificDoctor">Find Specific Doctor</button>
+      <button type="button" class="btn btn-primary" id="symptomDoctor">Find doctor based on symptoms</button>
+    </div>
 
+
+    <div class="nameCard">
+      <h1>Find a nearby Doctor</h1>
+      <form>
+        <div class="form-group">
+          <label for="doctorName">Specific Doctor</label>
+          <input type="text" class="form-control" id="doctorName" placeholder="Ex. Mark">
+        </div>
+        <button type="button" class="btn btn-primary" id="answerNameButton">Submit</button>
+      </form>
+      <h2 id="doctor1"></h2>
+      <h3 id="doctorAddress1"></h3>
+      <h3 id="doctornumber1"></h3>
+      <h3 id="doctorWebsite1"></h3>
+      <h3 id="doctorAccept1"></h3>
+    </div>
+
+
+    <div class="SymptomCard">
+      <h1>Find nearby Doctors</h1>
+      <form>
+        <div class="form-group">
+          <label for="symptoms">Symptoms</label>
+          <input type="text" class="form-control" id="symptoms" placeholder="Ex. sore throat, foot">
+        </div>
+        <button type="button" class="btn btn-primary" id="answerSymptomButton">Submit</button>
+      </form>
+      <h2 id="doctor"></h2>
+      <h3 id="yourSymptoms"></h3>
+      <h3 id="doctorAddress"></h3>
+      <h3 id="doctornumber"></h3>
+      <h3 id="doctorWebsite"></h3>
+      <h3 id="doctorAccept"></h3>
+    </div>
   </div>
 </body>
 </html>
