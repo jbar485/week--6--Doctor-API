@@ -1,6 +1,6 @@
 # _Doctor API_
 
-#### _A web application that helps you find a local doctor, 11//2019_
+#### _A web application that helps you find a local doctor, 11/22/2019_
 
 #### By _**Judah Barton**_
 
