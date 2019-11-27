@@ -7,14 +7,14 @@
 </head>
 <body>
   <div class="container">
-    <div class="firstPage">
+    <div id="firstPage">
       <h1>What would you like to do</h1>
       <button type="button" class="btn btn-primary" id="specificDoctor">Find Specific Doctor</button>
       <button type="button" class="btn btn-primary" id="symptomDoctor">Find doctor based on symptoms</button>
     </div>
 
 
-    <div class="nameCard">
+    <div id="nameCard">
       <h1>Find a nearby Doctor</h1>
       <form>
         <div class="form-group">
@@ -23,15 +23,14 @@
         </div>
         <button type="button" class="btn btn-primary" id="answerNameButton">Submit</button>
       </form>
-        <h2 id="doctor1"></h2>
-        <h3 id="doctorAddress1"></h3>
-        <h3 id="doctornumber1"></h3>
-        <h3 id="doctorWebsite1"></h3>
-        <h3 id="doctorAccept1"></h3>
+      <button type="button" class="btn btn-primary restart">Reset</button>
+        <div id="originalDoctor">
+          
+        </div>
     </div>
 
 
-    <div class="SymptomCard">
+    <div id="symptomCard">
       <h1>Find nearby Doctors</h1>
       <form>
         <div class="form-group">
@@ -40,6 +39,7 @@
         </div>
         <button type="button" class="btn btn-primary" id="answerSymptomButton">Submit</button>
       </form>
+        <button type="button" class="btn btn-primary restart">Reset</button>
       <div id="listOfDoctors">
     </div>
     </div>

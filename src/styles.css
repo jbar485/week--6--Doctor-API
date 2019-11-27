@@ -1,17 +1,6 @@
-#playCard {
+#nameCard {
   display: none;
 }
-#end {
-  display: none;
-}
-#feedMe {
-  display: none;
-}
-
-#starving {
-  display: none;
-}
-
-#error, #popUp {
+#symptomCard {
   display: none;
 }
