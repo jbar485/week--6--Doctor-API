@@ -18,12 +18,19 @@ $(document).ready(function(){
 
 
     function getAnswer(answer) {
-      $("#yourSymptoms").text(`Your Symptoms: ${problem}`)
-      $('#doctor').text(`Doctor: ${answer.data[0].profile.first_name} ${answer.data[0].profile.last_name}`);
-      $('#doctorAddress').text(`Address: ${answer.data[0].practices[0].visit_address.street} ${answer.data[0].practices[0].visit_address.city} ${answer.data[0].practices[0].visit_address.state} ${answer.data[0].practices[0].visit_address.zip}`);
-      $('#doctornumber').text(`Phone number: ${answer.data[0].practices[0].phones[0].number}`);
-      $('#doctorWebsite').text(`Website: ${answer.data[0].practices[0].website}`);
-      $('#doctorAccept').text(`Accepting new patients: ${answer.data[0].practices[0].accepts_new_patients}`);
+      if (answer.data.length === 0) {
+        alert("hi");
+      }else {
+        for (var i = 0; i < answer.data.length; i++) {
+          $('#listOfDoctors').append(`Doctor: ${answer.data[i].profile.first_name} ${answer.data[i].profile.last_name}`);
+          $('#listOfDoctors').append(`Address: ${answer.data[i].practices[0].visit_address.street} ${answer.data[i].practices[0].visit_address.city} ${answer.data[i].practices[0].visit_address.state} ${answer.data[i].practices[0].visit_address.zip}`);
+          $('#listOfDoctors').append(`Phone number: ${answer.data[i].practices[0].phones[0].number}`);
+          $('#listOfDoctors').append(`Website: ${answer.data[i].practices[0].website}`);
+          $('#listOfDoctors').append(`Accepting new patients: ${answer.data[i].practices[0].accepts_new_patients}`);
+
+        }
+
+      }
     }
 
   });
@@ -40,11 +47,16 @@ $(document).ready(function(){
     })();
 
     function getNameAnswer(nameAnswer) {
-      $('#doctor1').text(`Doctor: ${nameAnswer.data[0].profile.first_name} ${nameAnswer.data[0].profile.last_name}`);
-      $('#doctorAddress1').text(`Address: ${nameAnswer.data[0].practices[0].visit_address.street} ${nameAnswer.data[0].practices[0].visit_address.city} ${nameAnswer.data[0].practices[0].visit_address.state} ${nameAnswer.data[0].practices[0].visit_address.zip}`);
-      $('#doctornumber1').text(`Phone number: ${nameAnswer.data[0].practices[0].phones[0].number}`);
-      $('#doctorWebsite1').text(`Website: ${nameAnswer.data[0].practices[0].website}`);
-      $('#doctorAccept1').text(`Accepting new patients: ${nameAnswer.data[0].practices[0].accepts_new_patients}`);
+      if (nameAnswer.data.length === 0) {
+        alert("hi");
+      }else {
+          $('#doctor1').text(`Doctor: ${nameAnswer.data[0].profile.first_name} ${nameAnswer.data[0].profile.last_name}`);
+          $('#doctorAddress1').text(`Address: ${nameAnswer.data[0].practices[0].visit_address.street} ${nameAnswer.data[0].practices[0].visit_address.city} ${nameAnswer.data[0].practices[0].visit_address.state} ${nameAnswer.data[0].practices[0].visit_address.zip}`);
+          $('#doctornumber1').text(`Phone number: ${nameAnswer.data[0].practices[0].phones[0].number}`);
+          $('#doctorWebsite1').text(`Website: ${nameAnswer.data[0].practices[0].website}`);
+          $('#doctorAccept1').text(`Accepting new patients: ${nameAnswer.data[0].practices[0].accepts_new_patients}`);
+
+      }
     }
   });
 
