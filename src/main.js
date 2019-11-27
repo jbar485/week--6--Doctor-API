@@ -22,12 +22,12 @@ $(document).ready(function(){
         alert("hi");
       }else {
         for (var i = 0; i < answer.data.length; i++) {
-          $('#listOfDoctors').append(`Doctor: ${answer.data[i].profile.first_name} ${answer.data[i].profile.last_name}`);
-          $('#listOfDoctors').append(`Address: ${answer.data[i].practices[0].visit_address.street} ${answer.data[i].practices[0].visit_address.city} ${answer.data[i].practices[0].visit_address.state} ${answer.data[i].practices[0].visit_address.zip}`);
-          $('#listOfDoctors').append(`Phone number: ${answer.data[i].practices[0].phones[0].number}`);
-          $('#listOfDoctors').append(`Website: ${answer.data[i].practices[0].website}`);
-          $('#listOfDoctors').append(`Accepting new patients: ${answer.data[i].practices[0].accepts_new_patients}`);
-
+          $('#listOfDoctors').append(`Doctor: ${answer.data[i].profile.first_name} ${answer.data[i].profile.last_name} <br>`);
+          $('#listOfDoctors').append(`Address: ${answer.data[i].practices[0].visit_address.street} ${answer.data[i].practices[0].visit_address.city} ${answer.data[i].practices[0].visit_address.state} ${answer.data[i].practices[0].visit_address.zip} <br>`);
+          $('#listOfDoctors').append(`Phone number: ${answer.data[i].practices[0].phones[0].number} <br>`);
+          $('#listOfDoctors').append(`Website: ${answer.data[i].practices[0].website} <br>`);
+          $('#listOfDoctors').append(`Accepting new patients: ${answer.data[i].practices[0].accepts_new_patients} <br>`);
+          $('#listOfDoctors').append("<br>");
         }
 
       }
