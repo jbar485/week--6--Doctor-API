@@ -16,7 +16,6 @@ $(document).ready(function(){
     $("#firstPage").hide();
   });
 
-  
   $("#answerSymptomButton").click(function(event){
     event.preventDefault();
     const problem = $("#symptoms").val();
@@ -28,28 +27,30 @@ $(document).ready(function(){
       getAnswer(answer);
     })();
 
-
-
     function getAnswer(answer) {
       if (answer.data.length === 0) {
-        alert("hi");
+        $('#listOfDoctors').text("Couldnt find any doctors that specialize in your symptoms. Maybe try wording them different.");
       }else {
         $('#listOfDoctors').text("");
         for (var i = 0; i < answer.data.length; i++) {
           $('#listOfDoctors').append(`Doctor: ${answer.data[i].profile.first_name} ${answer.data[i].profile.last_name} <br>`);
           $('#listOfDoctors').append(`Address: ${answer.data[i].practices[0].visit_address.street} ${answer.data[i].practices[0].visit_address.city} ${answer.data[i].practices[0].visit_address.state} ${answer.data[i].practices[0].visit_address.zip} <br>`);
           $('#listOfDoctors').append(`Phone number: ${answer.data[i].practices[0].phones[0].number} <br>`);
-          $('#listOfDoctors').append(`Website: ${answer.data[i].practices[0].website} <br>`);
-          $('#listOfDoctors').append(`Accepting new patients: ${answer.data[i].practices[0].accepts_new_patients} <br>`);
+          if (answer.data[i].practices[0].website === undefined) {
+            $('#listOfDoctors').append("Website: Currently Unavailable <br>");
+          }else {
+            $('#listOfDoctors').append(`Website: ${answer.data[i].practices[0].website} <br>`);
+          }
+          if (answer.data[i].practices[0].accepts_new_patients === true) {
+            $('#listOfDoctors').append(`We are accepting new patients <br>`);
+          }else {
+            $('#listOfDoctors').append(`We are not accepting new patients <br>`);
+          }
           $('#listOfDoctors').append("<br>");
         }
-
-
       }
     }
-
   });
-
   $("#answerNameButton").click(function(event){
     event.preventDefault();
     const name = $("#doctorName").val();
@@ -63,7 +64,7 @@ $(document).ready(function(){
 
     function getNameAnswer(nameAnswer) {
       if (nameAnswer.data.length === 0) {
-        alert("hi");
+        $('#originalDoctor').text("You need to enter a legitimate doctor.");
       }else {
         $('#originalDoctor').text("");
         $('#originalDoctor').append(`Doctor: ${nameAnswer.data[0].profile.first_name} ${nameAnswer.data[0].profile.last_name} <br>`);
@@ -74,7 +75,11 @@ $(document).ready(function(){
         }else {
           $('#originalDoctor').append(`Website: ${nameAnswer.data[0].practices[0].website} <br>`);
         }
-        $('#originalDoctor').append(`Accepting new patients: ${nameAnswer.data[0].practices[0].accepts_new_patients} <br>`);
+        if (nameAnswer.data[0].practices[0].accepts_new_patients === true) {
+          $('#originalDoctor').append(`We are accepting new patients <br>`);
+        }else {
+          $('#originalDoctor').append(`We are not accepting new patients <br>`);
+        }
 
       }
     }

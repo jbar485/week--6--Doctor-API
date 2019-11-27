@@ -8,40 +8,66 @@
 <body>
   <div class="container">
     <div id="firstPage">
-      <h1>What would you like to do</h1>
-      <button type="button" class="btn btn-primary" id="specificDoctor">Find Specific Doctor</button>
-      <button type="button" class="btn btn-primary" id="symptomDoctor">Find doctor based on symptoms</button>
+      <div class="jumbotron">
+        <h1>What would you like to do</h1>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="card text-white bg-dark mb-3">
+            <div class="card-body" id="specificDoctor">
+              <h5 class="card-title">Find Specific Doctor</h5>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="card text-white bg-danger mb-3">
+            <div class="card-body" id="symptomDoctor">
+              <h5 class="card-title">Find doctor based on symptoms</h5>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-
-
     <div id="nameCard">
-      <h1>Find a nearby Doctor</h1>
+      <div class="jumbotron">
+        <h1>Find a nearby Doctor</h1>
+      </div>
+      <div class="col-md-6" id="finalDoctor">
+        <div class="card text-white bg-dark mb-3">
+          <div class="card-body">
+            <div class="form-group">
+              <div class="card-header">Specific Doctor</div>
+              <input type="text" class="form-control" id="doctorName" placeholder="Ex. Aarin Meager-Benson">
+            </div>
+            <button type="button" class="btn btn-danger" id="answerNameButton">Submit</button>
+          </form>
+          <button type="button" class="btn btn-danger restart">Reset</button>
+          <div id="originalDoctor">
+          </div>
+        </div>
+      </div>
       <form>
-        <div class="form-group">
-          <label for="doctorName">Specific Doctor</label>
-          <input type="text" class="form-control" id="doctorName" placeholder="Ex. Mark">
-        </div>
-        <button type="button" class="btn btn-primary" id="answerNameButton">Submit</button>
-      </form>
-      <button type="button" class="btn btn-primary restart">Reset</button>
-        <div id="originalDoctor">
-          
-        </div>
+      </div>
     </div>
-
-
     <div id="symptomCard">
-      <h1>Find nearby Doctors</h1>
-      <form>
-        <div class="form-group">
-          <label for="symptoms">Symptoms</label>
-          <input type="text" class="form-control" id="symptoms" placeholder="Ex. sore throat, foot">
+      <div class="jumbotron">
+        <h1>Find nearby Doctors</h1>
+      </div>
+      <div class="col-md-6" id="finalSymptoms">
+        <div class="card text-white bg-danger mb-3">
+          <div class="card-body" >
+            <div class="form-group">
+              <div class="card-header">Symptoms</div>
+              <input type="text" class="form-control" id="symptoms" placeholder="Ex. sore throat, foot">
+            </div>
+            <button type="button" class="btn btn-dark" id="answerSymptomButton">Submit</button>
+          </form>
+          <button type="button" class="btn btn-dark restart">Reset</button>
+          <div id="listOfDoctors"></div>
         </div>
-        <button type="button" class="btn btn-primary" id="answerSymptomButton">Submit</button>
-      </form>
-        <button type="button" class="btn btn-primary restart">Reset</button>
-      <div id="listOfDoctors">
+      </div>
     </div>
+    <form>
     </div>
   </div>
 </body>
